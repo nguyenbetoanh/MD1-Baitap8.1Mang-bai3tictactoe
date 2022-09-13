@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    button {
+      width: 60px;
+      height: 60px;
+      color: red;
+      font-size: xxx-large;
+      background-color: lightgray;
+
+    }
+
+    body {
+      margin-left: 700px;
+      margin-top: 10px;
+    }
+
+    h1 {
+      margin-left: 30px;
+    }
+
+    button {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<h1>Game X O</h1>
+<button cellIndex="1" onclick="nutBam(this,1)"></button>
+<button cellIndex="2" onclick="nutBam(this,2)"></button>
+<button cellIndex="3" onclick="nutBam(this,3)"></button>
+<br>
+<button cellIndex="4" onclick="nutBam(this,4)"></button>
+<button cellIndex="5" onclick="nutBam(this,5)"></button>
+<button cellIndex="6" onclick="nutBam(this,6)"></button>
+<br>
+<button cellIndex="7" onclick="nutBam(this,7)"></button>
+<button cellIndex="8" onclick="nutBam(this,8)"></button>
+<button cellIndex="9" onclick="nutBam(this,9)"></button>
+<br>
+<script>
+  var click = true;
+  var count = 0;
+  var arr = []
+  var arr2 = []
+
+  function nutBam(x, a) {
+
+    if (click) {
+      x.style.backgroundColor = "yellow";
+      x.innerText = "X"
+      console.log("a", a)
+      arr.push(a)
+      console.log(arr)
+    } else {
+      x.style.backgroundColor = "pink";
+      x.innerText = "O"
+      console.log("a", a)
+      arr2.push(a)
+      console.log(arr2)
+    }
+    x.setAttribute("disabled", "true");
+
+    click = !click;
+    count++
+
+    if (count === 9) {
+      alert('het luot choi')
+      location.reload()
+    }
+    check()
+  }
+  function check(){
+
+  }
+</script>
+</body>
+</html>
